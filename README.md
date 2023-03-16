@@ -219,3 +219,42 @@ Documentación: https://www.npmjs.com/package/react-native-permissions
     <string>Necesito saber tu ubicación para mostrar el mapa</string>
     ```
 - Corremos el comando: `npx pod-install`
+
+
+
+## Configuración de GoogleMaps
+Documentación: https://github.com/react-native-maps/react-native-maps
+
+- Instalar la libreria `yarn add react-native-maps`
+
+###Configuracion GoogleMaps en Android:
+
+- Abrir el archivo `AndroidManifest.xml` que se encuentra en la ruta `android/app/src/main/AndroidManifest.xml`
+
+- Agregar lo siguiente:
+    ```
+        <application>
+            <!-- You will only need to add this meta-data tag, but make sure it's a child of application -->
+            <meta-data
+                android:name="com.google.android.geo.API_KEY"
+                android:value="Your Google maps API Key Here"/>
+        </application>
+    ```
+
+###Configuracion GoogleMaps en IOS:
+
+- Abrir el archivo `AppDelegate.m`
+
+- Agregar lo siguiente:
+    ```
+        + #import <GoogleMaps/GoogleMaps.h>
+
+        @implementation AppDelegate
+        ...
+
+        (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+        {
+        +  [GMSServices provideAPIKey:@"_YOUR_API_KEY_"]; // add this line using the api key obtained from Google Console
+    ```
+
+
