@@ -258,3 +258,22 @@ Documentación: https://github.com/react-native-maps/react-native-maps
     ```
 
 
+## Obtener las coordenadas del usuario:
+Documantación: https://github.com/michalchudziak/react-native-geolocation
+
+- Instalamos la libreria: 
+`yarn add @react-native-community/geolocation`
+
+- Usar el siguiente coodigo:
+```
+import Geolocation from '@react-native-community/geolocation';
+
+Geolocation.getCurrentPosition(info => console.log(info));
+```
+- Corremos el comando: `npx pod-install`
+
+## Mover la camara a las coordenadas del usuario
+
+- Necesitamos saber 2 cosas:
+    - una funcion que nnos permita saber donde estan las coordenadas actuales del usuario
+    - tener una referencia al objecto del mapa
